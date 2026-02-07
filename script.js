@@ -29,3 +29,25 @@ function toggleMusic() {
     }
     playing = !playing;
 }
+const audio = document.getElementById("myAudio");
+let isPlaying = false;
+
+function handleMusic() {
+    if (isPlaying) {
+        audio.pause();
+        document.getElementById("music-icon").innerText = "🔇";
+        document.getElementById("music-control").style.animationPlayState = "paused";
+    } else {
+        audio.play().catch(error => console.log("Chờ tương tác người dùng..."));
+        document.getElementById("music-icon").innerText = "🎵";
+        document.getElementById("music-control").style.animationPlayState = "running";
+    }
+    isPlaying = !isPlaying;
+}
+
+// Tự động phát khi Bình Minh chạm vào màn hình lần đầu tiên
+document.addEventListener('click', function() {
+    if(!isPlaying) {
+        handleMusic();
+    }
+}, { once: true });
