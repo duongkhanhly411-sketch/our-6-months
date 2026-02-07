@@ -15,3 +15,17 @@ function updateTimer() {
 }
 setInterval(updateTimer, 1000);
 updateTimer();
+// Hàm bật/tắt nhạc
+let playing = true;
+function toggleMusic() {
+    const iframe = document.getElementById('bg-music');
+    const icon = document.getElementById('music-icon');
+    if (playing) {
+        iframe.src = "";
+        icon.innerText = "🔇";
+    } else {
+        iframe.src = "https://www.youtube.com/embed/OkXnZSafFns?autoplay=1&loop=1&playlist=OkXnZSafFns";
+        icon.innerText = "🎵";
+    }
+    playing = !playing;
+}
