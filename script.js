@@ -1,4 +1,3 @@
-// Cập nhật ngày kỷ niệm chính xác của Ly và Bình Minh
 const startDate = new Date("2025-08-18T00:00:00");
 
 function updateTimer() {
@@ -7,19 +6,14 @@ function updateTimer() {
 
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / 1000 / 60) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
+    const mins = Math.floor((diff / 1000 / 60) % 60);
+    const secs = Math.floor((diff / 1000) % 60);
 
-    // Hiển thị ra màn hình
-    const timerElement = document.getElementById("timer");
-    if (timerElement) {
-        timerElement.innerHTML = `
-            <div style="font-size: 1.5rem; margin-bottom: 10px;">${days} ngày</div>
-            <div style="font-size: 1rem;">${hours} giờ ${minutes} phút ${seconds} giây</div>
-        `;
+    const timerDiv = document.getElementById("timer");
+    if (timerDiv) {
+        timerDiv.innerHTML = `Đã đồng hành cùng nhau: ${days} ngày ${hours} giờ ${mins} phút ${secs} giây`;
     }
 }
 
-// Cập nhật mỗi giây
 setInterval(updateTimer, 1000);
 updateTimer();
