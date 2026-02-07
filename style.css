@@ -1,68 +1,74 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
 
+:root {
+    --vintage-cream: #f4ecd8;
+    --vintage-dark: #1a1a1a;
+    --film-sepia: #704214;
+}
+
 body {
-    background-color: #2b2b2b; /* Màu tối như rạp chiếu phim */
-    color: #e0c9a6; /* Màu giấy cũ */
+    background-color: var(--vintage-dark);
+    color: var(--vintage-cream);
     font-family: 'Courier Prime', monospace;
     margin: 0;
     overflow-x: hidden;
 }
 
-/* Hiệu ứng nhiễu hạt phim cũ */
-.grain {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: url(https://grainy-gradients.vercel.app/noise.svg);
-    opacity: 0.05;
-    pointer-events: none;
-    z-index: 10;
+/* Hiệu ứng nhiễu hạt và quét dòng */
+.overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://raw.githubusercontent.com/Anestis-K/Retro-Film-Overlay/master/grain.gif');
+    opacity: 0.05; pointer-events: none; z-index: 10;
 }
 
-.film-header {
+.header {
     text-align: center;
-    padding: 50px 20px;
-    border-bottom: 2px dashed #e0c9a6;
+    padding: 30px;
+    border-bottom: 1px double var(--vintage-cream);
 }
 
-.film-meta { font-size: 0.8rem; letter-spacing: 3px; }
+/* Dải phim */
+.film-strip {
+    display: flex;
+    overflow-x: auto;
+    padding: 50px 0;
+    scrollbar-width: none; /* Ẩn scrollbar */
+}
 
-.film-roll {
+.film-container {
+    display: flex;
+    padding-left: 10vw;
+}
+
+.frame {
+    flex: 0 0 350px;
+    height: 450px;
+    margin-right: 20px;
+    background: #222;
+    border: 15px solid #111;
+    border-style: solid none; /* Tạo răng cưa phim dọc */
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* Răng cưa phim giả lập */
+.frame::before {
+    content: "▫ ▫ ▫ ▫ ▫ ▫ ▫ ▫ ▫ ▫";
+    position: absolute; top: -12px; left: 0; width: 100%;
+    color: #444; font-size: 20px; text-align: center;
+}
+
+.frame-content {
+    border: 1px solid var(--vintage-cream);
+    height: 100%;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 40px 0;
+    justify-content: center;
 }
 
-/* Khung hình phim */
-.frame {
-    width: 80%;
-    max-width: 500px;
-    border-left: 20px solid #1a1a1a; /* Răng cưa phim */
-    border-right: 20px solid #1a1a1a;
-    background: #333;
-    margin-bottom: 50px;
-    position: relative;
-    padding: 20px;
-}
-
-.frame-border {
-    border: 1px solid #e0c9a6;
-    padding: 20px;
-}
-
-.frame-number {
-    position: absolute;
-    top: 5px; left: -15px;
-    color: white; font-size: 0.7rem;
-}
-
-.retro-timer {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #e0c9a6;
-    color: #2b2b2b;
-    padding: 10px;
-    font-size: 0.9rem;
-    box-shadow: 5px 5px 0px #1a1a1a;
+#timer {
+    position: fixed; bottom: 10px; left: 10px;
+    font-size: 0.8rem; color: #888;
 }
