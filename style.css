@@ -1,14 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
 
-:root {
-    --bg-color: #2c241e;
-    --paper-color: #dcc8a0;
-    --text-color: #4a3728;
-}
-
 body {
-    background-color: var(--bg-color);
-    color: var(--paper-color);
+    background-color: #2c241e; /* Màu nâu tối rạp phim */
+    color: #dcc8a0; /* Màu vàng kem hoài cổ */
     font-family: 'Courier Prime', monospace;
     margin: 0;
     scroll-behavior: smooth;
@@ -21,68 +15,55 @@ body {
     opacity: 0.08; pointer-events: none; z-index: 100;
 }
 
-.scene {
+.page {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    border-bottom: 2px dashed rgba(220, 200, 160, 0.2);
+    padding: 40px 20px;
+    border-bottom: 1px dashed rgba(220, 200, 160, 0.2);
 }
 
 /* Trang 1: Bức thư */
-.letter-container {
-    background-color: var(--paper-color);
-    color: var(--text-color);
+.letter-card {
+    background: #dcc8a0;
+    color: #2c241e;
     padding: 40px;
     max-width: 500px;
-    box-shadow: 10px 10px 0px #1a1512;
-    position: relative;
+    box-shadow: 15px 15px 0px #1a1512;
     transform: rotate(-1deg);
 }
 
 #timer {
     margin-top: 30px;
     font-weight: bold;
-    border-top: 1px solid var(--text-color);
-    padding-top: 10px;
+    border-top: 2px solid #2c241e;
+    padding-top: 15px;
 }
 
-/* Trang 2: Dải phim */
-.film-strip {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-}
-
+/* Trang 2: Khung hình phim */
 .film-frame {
     background: #111;
     padding: 15px;
-    border-left: 10px solid #000;
-    border-right: 10px solid #000;
+    margin-bottom: 30px;
+    border-left: 15px solid #000;
+    border-right: 15px solid #000;
     border-style: double none;
-    text-align: center;
 }
 
-.photo-placeholder {
-    width: 250px;
-    height: 180px;
+.img-placeholder {
+    width: 280px; height: 180px;
     background: #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #444;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid #444; color: #666;
 }
 
-.frame-info { margin-top: 10px; font-size: 0.8rem; }
+.frame-desc { margin-top: 15px; text-align: center; font-size: 0.8rem; }
 
-/* Trang 3: Lời kết */
-.end-credits { text-align: center; }
-.heart-icon { font-size: 40px; animation: pulse 1.5s infinite; }
-@keyframes pulse {
-    0% { transform: scale(1); }
+/* Hiệu ứng trái tim đập */
+.heart { font-size: 50px; animation: beat 1.5s infinite; margin: 20px 0; }
+@keyframes beat {
+    0%, 100% { transform: scale(1); }
     50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
 }
