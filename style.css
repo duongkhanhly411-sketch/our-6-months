@@ -106,3 +106,16 @@ body {
 /* Làm cho các khung hình sole nhau lãng mạn */
 .film-item.left { padding-left: 50px; }
 .film-item.right { padding-left: 150px; }
+/* Hiệu ứng phát sáng lãng mạn khi di chuột vào khung phim */
+.film-frame:hover {
+    transform: scale(1.05) rotate(0deg); /* Phóng to nhẹ và đưa về trạng thái thẳng */
+    box-shadow: 0 0 30px rgba(220, 200, 160, 0.6); /* Toả ánh sáng vàng kem */
+    border-color: #dcc8a0; /* Làm rõ viền phim hơn */
+    z-index: 10;
+    cursor: pointer;
+}
+
+/* Thêm hiệu ứng chuyển cảnh mượt mà */
+.film-frame {
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
