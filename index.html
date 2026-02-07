@@ -7,14 +7,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div style="display:none">
-    <iframe id="bg-music" width="0" height="0" src="https://www.youtube.com/embed/OkXnZSafFns?autoplay=1&loop=1&playlist=OkXnZSafFns" frameborder="0" allow="autoplay"></iframe>
-</div>
+   <audio id="myAudio" loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  </audio>
 
-<div id="music-control" onclick="toggleMusic()">
+<div id="music-control" onclick="handleMusic()">
     <span id="music-icon">🎵</span>
 </div>
-    <div class="film-grain"></div>
 
     <section class="page" id="home">
         <div class="letter-card">
