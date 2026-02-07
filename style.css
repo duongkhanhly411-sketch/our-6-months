@@ -3,7 +3,7 @@
 body {
     background-color: #2c241e; /* Màu nâu tối rạp phim */
     color: #dcc8a0; /* Màu vàng kem hoài cổ */
-    font-family: 'Courier Prime', monospace;
+    font-family: 'Playfair Display', serif;
     margin: 0;
     scroll-behavior: smooth;
 }
