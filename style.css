@@ -1,39 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+
 body {
-    background: linear-gradient(135deg, #ffafbd, #ffc3a0);
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #2b2b2b; /* Màu tối như rạp chiếu phim */
+    color: #e0c9a6; /* Màu giấy cũ */
+    font-family: 'Courier Prime', monospace;
     margin: 0;
-    color: #4a4a4a;
+    overflow-x: hidden;
 }
-.container {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+/* Hiệu ứng nhiễu hạt phim cũ */
+.grain {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url(https://grainy-gradients.vercel.app/noise.svg);
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.film-header {
     text-align: center;
-    max-width: 400px;
+    padding: 50px 20px;
+    border-bottom: 2px dashed #e0c9a6;
 }
-.heart {
-    font-size: 50px;
-    animation: pulse 1.5s infinite;
+
+.film-meta { font-size: 0.8rem; letter-spacing: 3px; }
+
+.film-roll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
 }
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
+
+/* Khung hình phim */
+.frame {
+    width: 80%;
+    max-width: 500px;
+    border-left: 20px solid #1a1a1a; /* Răng cưa phim */
+    border-right: 20px solid #1a1a1a;
+    background: #333;
+    margin-bottom: 50px;
+    position: relative;
+    padding: 20px;
 }
-h1 { color: #ff4d6d; margin-bottom: 5px; }
-#timer {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #ff4d6d;
-    margin-top: 10px;
+
+.frame-border {
+    border: 1px solid #e0c9a6;
+    padding: 20px;
 }
-.message {
-    margin-top: 20px;
-    font-style: italic;
-    line-height: 1.6;
+
+.frame-number {
+    position: absolute;
+    top: 5px; left: -15px;
+    color: white; font-size: 0.7rem;
+}
+
+.retro-timer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #e0c9a6;
+    color: #2b2b2b;
+    padding: 10px;
+    font-size: 0.9rem;
+    box-shadow: 5px 5px 0px #1a1a1a;
 }
