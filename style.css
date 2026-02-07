@@ -119,3 +119,12 @@ body {
 .film-frame {
     transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+h1, .letter-title, .section-title {
+    font-family: 'Dancing Script', cursive;
+    letter-spacing: 2px;
+}
+
+.letter-card {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.6;
+}
