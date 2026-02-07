@@ -67,3 +67,42 @@ body {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.2); }
 }
+/* Bố cục trang 2 mới */
+.timeline-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    padding: 50px 0;
+}
+
+/* Cột timeline bên cạnh thanh mảnh */
+.side-timeline {
+    position: absolute;
+    left: 10%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, #dcc8a0, transparent);
+}
+
+/* Hiệu ứng khung hình bay bổng */
+.film-item {
+    display: flex;
+    width: 100%;
+    margin-bottom: 80px;
+    justify-content: center;
+}
+
+.animate-float {
+    animation: floating 5s ease-in-out infinite;
+    box-shadow: 15px 15px 40px rgba(0,0,0,0.6);
+}
+
+@keyframes floating {
+    0%, 100% { transform: translateY(0) rotate(-1deg); }
+    50% { transform: translateY(-15px) rotate(1.5deg); }
+}
+
+/* Làm cho các khung hình sole nhau lãng mạn */
+.film-item.left { padding-left: 50px; }
+.film-item.right { padding-left: 150px; }
