@@ -7,231 +7,92 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-       <audio id="myAudio" loop>
-  <source src="https://raw.githubusercontent.com/duongkhanhly411-sketch/our-6-months/main/phepmau.mp3" type="audio/mpeg">
-</audio>
+    <audio id="myAudio" loop>
+        <source src="https://raw.githubusercontent.com/duongkhanhly411-sketch/our-6-months/main/phepmau.mp3" type="audio/mpeg">
+    </audio>
   
-<div id="music-control" onclick="handleMusic()">
-    <span id="music-icon">🎵</span>
-</div>
+    <div id="music-control" onclick="handleMusic()">
+        <span id="music-icon">🎵</span>
+    </div>
 
     <section class="page" id="home">
-    <div class="dust-layer"></div>
-    
-    <div id="gift-container" onclick="openGift()">
-        <div class="silver-boat">⛵</div>
-        <p id="click-hint">Chạm vào thuyền để nhận Phép Màu ✨</p>
-    </div>
+        <div class="dust-layer"></div>
+        <div id="gift-container" onclick="openGift()">
+            <div class="silver-boat">⛵</div>
+            <p id="click-hint">Chạm vào thuyền để nhận Phép Màu ✨</p>
+        </div>
+        <div class="letter-card" id="main-letter">
+            <p class="date-stamp">18.08.2025</p>
+            <h1>Dear My Love,</h1>
+            <p class="letter-content">
+                You are my sunshine. Thank you for being my love.
+                Cảm ơn anh đã đến bên và yêu em, là một phần của cuốn phim của em. Và cuốn phim này là của chúng ta...
+            </p>
+            <div id="timer" class="bump-timer"></div>
+        </div>
+    </section>
 
-    <div class="letter-card" id="main-letter">
-        <p class="date-stamp">18.08.2025</p>
-        <h1>Dear My Love,</h1>
-        <p class="letter-content">
-            You are my sunshine. Thank you for being my love.
-            Cảm ơn anh đã đến bên và yêu em, là một phần của cuốn phim của em. Và cuốn phim này là của chúng ta...
-        </p>
-        
-        <div id="timer" class="bump-timer"></div>
-    </div>
-</section>
-
-   <section class="page" id="timeline">
-    <h2 class="title">HÀNH TRÌNH ĐÃ QUA</h2>
-    
-    <div class="film-strip-container">
-        <div class="film-strip">
-
-            
-            <div class="film-item">
-                <div class="film-frame">
-                  <div class="img-placeholder">
-    <img src="background.jpg" alt="Ngày đầu mình chung lối" class="film-photo">
-</div>
-                    
-                    <div class="frame-desc">
-                        <strong>18.08.2025</strong>
-                        <p>Ngày đầu mình chung lối 💌</p>
-                    </div>
-                </div>
-            </div>
-
-           <div class="film-item">
-                <div class="film-frame">
-                    <div class="img-placeholder">
-    <img src="ngay02.jpg" alt="Đánh cầu lông" class="film-photo">
-</div>
-                    <div class="frame-desc">
-                        <strong>25.08.2025</strong>
-                        <p>Ngày đầu đi đánh cầu cùng nhau </p>
-                    </div>
-                </div>
-            </div>
-             <div class="film-item">
-                <div class="film-frame">
-                    <div class="img-placeholder">
-    <img src="burnout.jpg" alt="Đi hải phòng" class="film-photo">
-</div>
-                    <div class="frame-desc">
-                        <strong>28.08.2025</strong>
-                        <p>Bên anh khi anh íu đúiii </p>
-                    </div>
-                </div>
-            </div>
-             <div class="film-item">
-                <div class="film-frame">
-                    <div class="img-placeholder">
-    <img src="haiphong.jpg" alt="Đi hải phòng" class="film-photo">
-</div>
-                    <div class="frame-desc">
-                        <strong>30.08.2025</strong>
-                        <p>Anh sấy tóc cho em </p>
-                    </div>
-                </div>
-            </div>
-           <div class="film-item">
-                <div class="film-frame">
-                    <div class="img-placeholder">
-    <img src="job.jpg" alt="Job đầu tiên cùng anh" class="film-photo">
-</div>
-                    <div class="frame-desc">
-                        <strong>07.09.2025</strong>
-                        <p>Job đầu tiên cùng anh </p>
-                    </div>
-                </div>
-            </div>
-           <div class="film-item">
-                <div class="film-frame">
-                    <div class="img-placeholder">
-    <img src="1month.jpg" alt="Kỷ niệm 1 tháng" class="film-photo">
-</div>
-                    <div class="frame-desc">
-                        <strong>18.09.2025</strong>
-                        <p>Kỷ niệm 1 tháng </p>
-                    </div>
-                </div>
-            </div>
-            <div class="film-item">
-                <div class="film-frame">
-                    <div class="img-placeholder">
-    <img src="20:10.jpg" alt="Kỷ niệm 1 tháng" class="film-photo">
-</div>
-                    <div class="frame-desc">
-                        <strong>20.10.2025.2025</strong>
-                        <p>20/10 của em </p>
-                    </div>
-                </div>
-            </div>
-            <div class="film-item">
-                <div class="film-frame">
-                    <div class="img-placeholder">
-    <img src="sinhnhat.jpg" alt="Kỷ niệm 1 tháng" class="film-photo">
-</div>
-                    <div class="frame-desc">
-                        <strong>04.11.2025</strong>
-                        <p>Anh cùng sinh nhật của em </p>
-                    </div>
-                </div>
-            </div>
-           <div class="film-item">
-                <div class="film-frame">
-                    <div class="img-placeholder">
-    <img src="datem.jpg" alt="Kỷ niệm 1 tháng" class="film-photo">
-</div>
-                    <div class="frame-desc">
-                        <strong>04.11.2025</strong>
-                    </div>
-                </div>
-            </div>
-            <div class="film-item">
-                <div class="film-frame">
-                    <div class="img-placeholder">
-    <img src="suachua.jpg" alt="Kỷ niệm 1 tháng" class="film-photo">
-</div>
-                    <div class="frame-desc">
-                        <strong>13.11.2025</strong>
-                         <p>Anh thợ sửa ống nước may mắn </p>
-                    </div>
-                </div>
-            </div>
-            <div class="film-item">
-                <div class="film-frame">
-                    <div class="img-placeholder">
-    <img src="bay.jpg" alt="Kỷ niệm 1 tháng" class="film-photo">
-</div>
-                    <div class="frame-desc">
-                        <strong>21.11.2025</strong>
-                         <p>Anh cùng em bayyyy</p>
-                    </div>
-                </div>
-            </div>
-            <div class="film-item">
-                <div class="film-frame">
-                    <div class="img-placeholder">
-    <img src="minvaly.jpg" alt="Kỷ niệm 1 tháng" class="film-photo">
-</div>
-                    <div class="frame-desc">
-                        <strong>23.11.2025</strong>
-                         <p>Saigon và chúng ta</p>
-                    </div>
-                </div>
-            </div>
-            <div class="film-item">
-                <div class="film-frame">
-                    <div class="img-placeholder">
-    <img src="aodai.jpg" alt="Kỷ niệm 1 tháng" class="film-photo">
-</div>
-                    <div class="frame-desc">
-                        <strong>01.02.2025</strong>
-                         <p>Anh chụp áo dài cho emm</p>
-                    </div>
-                </div>
+    <section class="page" id="timeline">
+        <h2 class="title">HÀNH TRÌNH ĐÃ QUA</h2>
+        <div class="film-strip-container">
+            <div class="film-strip">
+                <div class="film-item"><div class="film-frame"><div class="img-placeholder"><img src="background.jpg" class="film-photo"></div><div class="frame-desc"><strong>18.08.2025</strong><p>Ngày đầu mình chung lối 💌</p></div></div></div>
+                <div class="film-item"><div class="film-frame"><div class="img-placeholder"><img src="ngay02.jpg" class="film-photo"></div><div class="frame-desc"><strong>25.08.2025</strong><p>Ngày đầu đi đánh cầu cùng nhau</p></div></div></div>
+                <div class="film-item"><div class="film-frame"><div class="img-placeholder"><img src="burnout.jpg" class="film-photo"></div><div class="frame-desc"><strong>28.08.2025</strong><p>Bên anh khi anh íu đúiii</p></div></div></div>
+                <div class="film-item"><div class="film-frame"><div class="img-placeholder"><img src="haiphong.jpg" class="film-photo"></div><div class="frame-desc"><strong>30.08.2025</strong><p>Anh sấy tóc cho em</p></div></div></div>
+                <div class="film-item"><div class="film-frame"><div class="img-placeholder"><img src="job.jpg" class="film-photo"></div><div class="frame-desc"><strong>07.09.2025</strong><p>Job đầu tiên cùng anh</p></div></div></div>
+                <div class="film-item"><div class="film-frame"><div class="img-placeholder"><img src="1month.jpg" class="film-photo"></div><div class="frame-desc"><strong>18.09.2025</strong><p>Kỷ niệm 1 tháng</p></div></div></div>
+                <div class="film-item"><div class="film-frame"><div class="img-placeholder"><img src="20:10.jpg" class="film-photo"></div><div class="frame-desc"><strong>20.10.2025</strong><p>20/10 của em</p></div></div></div>
+                <div class="film-item"><div class="film-frame"><div class="img-placeholder"><img src="sinhnhat.jpg" class="film-photo"></div><div class="frame-desc"><strong>04.11.2025</strong><p>Anh cùng sinh nhật của em</p></div></div></div>
+                <div class="film-item"><div class="film-frame"><div class="img-placeholder"><img src="datem.jpg" class="film-photo"></div><div class="frame-desc"><strong>04.11.2025</strong><p>Ngày kỷ niệm đặc biệt</p></div></div></div>
+                <div class="film-item"><div class="film-frame"><div class="img-placeholder"><img src="suachua.jpg" class="film-photo"></div><div class="frame-desc"><strong>13.11.2025</strong><p>Anh thợ sửa ống nước may mắn</p></div></div></div>
+                <div class="film-item"><div class="film-frame"><div class="img-placeholder"><img src="bay.jpg" class="film-photo"></div><div class="frame-desc"><strong>21.11.2025</strong><p>Anh cùng em bayyyy</p></div></div></div>
+                <div class="film-item"><div class="film-frame"><div class="img-placeholder"><img src="minvaly.jpg" class="film-photo"></div><div class="frame-desc"><strong>23.11.2025</strong><p>Saigon và chúng ta</p></div></div></div>
+                <div class="film-item"><div class="film-frame"><div class="img-placeholder"><img src="aodai.jpg" class="film-photo"></div><div class="frame-desc"><strong>01.02.2025</strong><p>Anh chụp áo dài cho emm</p></div></div></div>
             </div>
         </div>
     </section>
-<section class="page" id="extra-moments">
-    <div class="background-stars"></div> 
+
     <section class="page" id="extra-moments">
-    <div class="background-stars"></div> 
-    <div class="floating-elements-container">
-        <img src="m1.jpg" alt="Kỷ niệm 1" class="floating-bubble bubble-1">
-        <img src="m2.jpg" alt="Kỷ niệm 2" class="floating-bubble bubble-2">
-        <img src="m3.jpg" alt="Kỷ niệm 3" class="floating-bubble bubble-3">
-        <img src="m4.jpg" alt="Kỷ niệm 3" class="floating-bubble bubble-4">
-        <img src="m5.jpg" alt="Kỷ niệm 3" class="floating-bubble bubble-5">
-        <img src="m6.jpg" alt="Kỷ niệm 3" class="floating-bubble bubble-6">
-        <img src="m7.jpg" alt="Kỷ niệm 3" class="floating-bubble bubble-7">
-        <img src="m8.jpg" alt="Kỷ niệm 3" class="floating-bubble bubble-8">
-        <img src="m9.jpg" alt="Kỷ niệm 3" class="floating-bubble bubble-9">
-        <img src="m10.jpg" alt="Kỷ niệm 3" class="floating-bubble bubble-10">
-        <img src="m11.jpg" alt="Kỷ niệm 3" class="floating-bubble bubble-11">
-        <img src="m12.jpg" alt="Kỷ niệm 3" class="floating-bubble bubble-12">
-        <img src="m13.jpg" alt="Kỷ niệm 3" class="floating-bubble bubble-13">
-        <img src="m14.jpg" alt="Kỷ niệm 3" class="floating-bubble bubble-14">
-        <img src="m15.jpg" alt="Kỷ niệm 3" class="floating-bubble bubble-15">
-        <img src="m16.jpg" alt="Kỷ niệm 3" class="floating-bubble bubble-16">
-        <img src="m17.jpg" alt="Kỷ niệm 3" class="floating-bubble bubble-17">
-        <img src="m18.jpg" alt="Kỷ niệm 3" class="floating-bubble bubble-18">
-        <img src="m19.jpg" alt="Kỷ niệm 3" class="floating-bubble bubble-19">
-        <img src="m20.jpg" alt="Kỷ niệm 3" class="floating-bubble bubble-20">
-        <img src="m21.jpg" alt="Kỷ niệm 3" class="floating-bubble bubble-21">
-        <img src="m22.jpg" alt="Kỷ niệm 3" class="floating-bubble bubble-22">
-        <img src="m23.jpg" alt="Kỷ niệm 3" class="floating-bubble bubble-23">
-        <img src="m24.jpg" alt="Kỷ niệm 3" class="floating-bubble bubble-24">
-        <img src="m25.jpg" alt="Kỷ niệm 3" class="floating-bubble bubble-25">
-        <img src="m26.jpg" alt="Kỷ niệm 3" class="floating-bubble bubble-26">
-        <img src="m27.jpg" alt="Kỷ niệm 3" class="floating-bubble bubble-27">
-        <img src="m28.jpg" alt="Kỷ niệm 3" class="floating-bubble bubble-28">
-        <img src="m29.jpg" alt="Kỷ niệm 3" class="floating-bubble bubble-29">
-        
-        
-        <p class="floating-text text-1">Và rất nhiều lần em ốm... </p>
-        <p class="floating-text text-2">Anh đã ở bên chăm sóc </p>
-        <p class="floating-text text-3">Rồi có những lần anh ngã xe... </p>
-        <p class="floating-text text-4">Và những cơn mưa đi cùng nhau</p>
-        <p class="floating-text text-4">Đi bão nữa...</p>
-    </div>
-</section>
-</section>
+        <div class="background-stars"></div> 
+        <div class="floating-elements-container">
+            <img src="m1.jpg" class="floating-bubble bubble-1">
+            <img src="m2.jpg" class="floating-bubble bubble-2">
+            <img src="m3.jpg" class="floating-bubble bubble-3">
+            <img src="m4.jpg" class="floating-bubble bubble-4">
+            <img src="m5.jpg" class="floating-bubble bubble-5">
+            <img src="m6.jpg" class="floating-bubble bubble-1">
+            <img src="m7.jpg" class="floating-bubble bubble-2">
+            <img src="m8.jpg" class="floating-bubble bubble-3">
+            <img src="m9.jpg" class="floating-bubble bubble-4">
+            <img src="m10.jpg" class="floating-bubble bubble-5">
+            <img src="m11.jpg" class="floating-bubble bubble-1">
+            <img src="m12.jpg" class="floating-bubble bubble-2">
+            <img src="m13.jpg" class="floating-bubble bubble-3">
+            <img src="m14.jpg" class="floating-bubble bubble-4">
+            <img src="m15.jpg" class="floating-bubble bubble-5">
+            <img src="m16.jpg" class="floating-bubble bubble-1">
+            <img src="m17.jpg" class="floating-bubble bubble-2">
+            <img src="m18.jpg" class="floating-bubble bubble-3">
+            <img src="m19.jpg" class="floating-bubble bubble-4">
+            <img src="m20.jpg" class="floating-bubble bubble-5">
+            <img src="m21.jpg" class="floating-bubble bubble-1">
+            <img src="m22.jpg" class="floating-bubble bubble-2">
+            <img src="m23.jpg" class="floating-bubble bubble-3">
+            <img src="m24.jpg" class="floating-bubble bubble-4">
+            <img src="m25.jpg" class="floating-bubble bubble-5">
+            <img src="m26.jpg" class="floating-bubble bubble-1">
+            <img src="m27.jpg" class="floating-bubble bubble-2">
+            <img src="m28.jpg" class="floating-bubble bubble-3">
+            <img src="m29.jpg" class="floating-bubble bubble-4">
+
+            <p class="floating-text text-1">Và rất nhiều lần em ốm... </p>
+            <p class="floating-text text-2">Anh đã ở bên chăm sóc </p>
+            <p class="floating-text text-3">Rồi có những lần anh ngã xe... </p>
+            <p class="floating-text text-4">Và những cơn mưa đi cùng nhau</p>
+        </div>
+    </section>
+
     <section class="page" id="end">
         <div class="credits">
             <h2>To be continued...</h2>
