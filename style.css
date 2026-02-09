@@ -50,7 +50,7 @@ body {
     position: relative;
 }
 
-/* 4. TRANG 1: HOME (GỬI BÌNH MINH) */
+/* 4. TRANG 1: HOME */
 #home {
     background: url('background.jpg') no-repeat center center / cover;
     z-index: 1;
@@ -101,9 +101,9 @@ body {
     100% { transform: scale(1); opacity: 1; }
 }
 
-/* 5. TRANG 2: TIMELINE (FIX LỖI BAY RA GIỮA) */
+/* 5. TRANG 2: TIMELINE */
 #timeline {
-    display: block !important; /* Giải phóng khỏi flexbox để không bị ép hẹp */
+    display: block !important;
     text-align: center;
 }
 
@@ -121,8 +121,8 @@ body {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
-    width: max-content !important; /* Dải phim dài theo số ảnh */
-    padding: 0 50px; /* Căn lề trái phải cân đối */
+    width: max-content !important;
+    padding: 0 50px;
     gap: 30px;
     margin: 0;
 }
@@ -152,7 +152,7 @@ body {
     filter: sepia(0.3);
 }
 
-/* 6. TRANG CUỐI: BONG BÓNG */
+/* 6. TRANG CUỐI: BONG BÓNG (ĐÃ FIX LỖI CHỒNG LẤN) */
 #extra-moments {
     background: linear-gradient(to bottom, var(--cinema-brown), #000);
     overflow: hidden;
@@ -165,40 +165,68 @@ body {
 
 .floating-bubble {
     position: absolute;
-    width: 150px; height: 150px;
+    width: 130px; height: 130px;
     border-radius: 50%;
     object-fit: cover;
     opacity: 0;
-    animation: bubbleRise 15s infinite ease-in;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-    bottom: -200px;
+    animation: bubbleRise 18s infinite ease-in;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    bottom: -150px;
+    border: 2px solid rgba(255,255,255,0.2);
 }
 
-/* Tỏa ảnh bong bóng rải rác màn hình */
+/* Phân bổ các bong bóng rải khắp chiều ngang màn hình */
 .bubble-1 { left: 5%; animation-delay: 0s; }
-.bubble-2 { left: 25%; animation-delay: 4s; width: 120px; height: 120px; }
-.bubble-3 { left: 45%; animation-delay: 2s; width: 180px; height: 180px; }
-.bubble-4 { left: 65%; animation-delay: 6s; }
-.bubble-5 { left: 85%; animation-delay: 1s; width: 130px; height: 130px; }
+.bubble-2 { left: 15%; animation-delay: 4s; width: 100px; height: 100px; }
+.bubble-3 { left: 25%; animation-delay: 8s; width: 150px; height: 150px; }
+.bubble-4 { left: 35%; animation-delay: 2s; width: 110px; height: 110px; }
+.bubble-5 { left: 45%; animation-delay: 6s; width: 140px; height: 140px; }
+.bubble-6 { left: 55%; animation-delay: 1s; width: 120px; height: 120px; }
+.bubble-7 { left: 65%; animation-delay: 9s; width: 160px; height: 160px; }
+.bubble-8 { left: 75%; animation-delay: 3s; width: 105px; height: 105px; }
+.bubble-9 { left: 85%; animation-delay: 7s; width: 135px; height: 135px; }
+.bubble-10 { left: 92%; animation-delay: 5s; width: 115px; height: 115px; }
+
+/* Các bubble từ 11-29 sẽ dùng lại các vị trí này nhưng delay khác nhau để không trùng */
+.bubble-11 { left: 8%; animation-delay: 10s; }
+.bubble-12 { left: 18%; animation-delay: 12s; }
+.bubble-13 { left: 28%; animation-delay: 14s; }
+.bubble-14 { left: 38%; animation-delay: 11s; }
+.bubble-15 { left: 48%; animation-delay: 13s; }
+.bubble-16 { left: 58%; animation-delay: 15s; }
+.bubble-17 { left: 68%; animation-delay: 10.5s; }
+.bubble-18 { left: 78%; animation-delay: 12.5s; }
+.bubble-19 { left: 88%; animation-delay: 14.5s; }
+.bubble-20 { left: 12%; animation-delay: 1s; }
+.bubble-21 { left: 22%; animation-delay: 3s; }
+.bubble-22 { left: 32%; animation-delay: 5s; }
+.bubble-23 { left: 42%; animation-delay: 7s; }
+.bubble-24 { left: 52%; animation-delay: 9s; }
+.bubble-25 { left: 62%; animation-delay: 11s; }
+.bubble-26 { left: 72%; animation-delay: 13s; }
+.bubble-27 { left: 82%; animation-delay: 15s; }
+.bubble-28 { left: 90%; animation-delay: 17s; }
+.bubble-29 { left: 50%; animation-delay: 18s; }
 
 @keyframes bubbleRise {
-    0% { opacity: 0; transform: translateY(0) scale(0.5); }
-    20% { opacity: 0.8; }
-    80% { opacity: 0.8; }
-    100% { opacity: 0; transform: translateY(-110vh) scale(1.2); }
+    0% { opacity: 0; transform: translateY(0) scale(0.5) rotate(0deg); }
+    20% { opacity: 0.7; transform: translateY(-20vh) rotate(10deg); }
+    80% { opacity: 0.7; transform: translateY(-80vh) rotate(-10deg); }
+    100% { opacity: 0; transform: translateY(-110vh) scale(1.2) rotate(20deg); }
 }
 
 .floating-text {
     position: absolute; width: 100%; text-align: center;
     color: #fff; opacity: 0; font-size: 2rem;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    animation: fadeInOut 10s infinite;
+    animation: fadeInOut 12s infinite;
+    z-index: 10;
 }
 
 .text-1 { top: 15%; animation-delay: 0s; }
-.text-2 { top: 35%; animation-delay: 2.5s; }
-.text-3 { top: 55%; animation-delay: 5s; }
-.text-4 { top: 75%; animation-delay: 7.5s; }
+.text-2 { top: 35%; animation-delay: 3s; }
+.text-3 { top: 55%; animation-delay: 6s; }
+.text-4 { top: 75%; animation-delay: 9s; }
 
 @keyframes fadeInOut {
     0%, 100% { opacity: 0; transform: translateY(10px); }
