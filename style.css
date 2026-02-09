@@ -257,3 +257,39 @@ h1, .letter-title, .section-title {
     transform: scale(1.1);
     filter: sepia(0); /* Hiện màu thật khi xem kĩ */
 }
+/* Container cho phép cuộn ngang */
+.film-strip-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 50px 0;
+    scrollbar-width: none; /* Ẩn thanh cuộn */
+}
+
+.film-strip-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Dải phim dàn hàng ngang */
+.film-strip {
+    display: flex;
+    gap: 30px;
+    padding: 0 100px;
+    width: max-content;
+}
+
+/* Tạo hình dáng khung phim nhựa */
+.film-item {
+    width: 320px;
+    flex-shrink: 0;
+    background: #111;
+    padding: 15px 10px;
+    /* Tạo lỗ răng cưa phim */
+    border-top: 12px dashed rgba(255,255,255,0.2);
+    border-bottom: 12px dashed rgba(255,255,255,0.2);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+}
+
+.film-frame {
+    background: #fff;
+    padding: 5px;
+}
