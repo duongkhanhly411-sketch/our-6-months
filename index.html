@@ -16,24 +16,23 @@
 </div>
 
     <section class="page" id="home">
-        <div class="letter-card">
-            <p class="date-stamp">18.08.2025</p>
-            <h1>Gửi Bình Minh,</h1>
-            <p class="letter-content">
-                6 tháng qua, mỗi giây phút bên anh đều là một khung hình rực rỡ nhất trong cuốn phim của em. 
-                Cảm ơn anh vì đã cùng em viết tiếp những trang kỉ niệm này...
-            </p>
-           <div id="gift-container" onclick="openGift()">
-    <div class="boat-gift">
-        <div class="sail">⛵</div>
-        <div class="hull">🎁</div>
+    <div class="dust-layer"></div>
+    
+    <div id="gift-container" onclick="openGift()">
+        <div class="silver-boat">⛵</div>
+        <p id="click-hint">Chạm vào thuyền để nhận Phép Màu ✨</p>
     </div>
-    <p id="click-hint">Nhấn vào con thuyền để mở "Phép Màu"...</p>
-</div>
 
-<div id="timer" style="display:none"></div>
-        </div>
-    </section>
+    <div class="letter-card" id="main-letter">
+        <p class="date-stamp">18.08.2025</p>
+        <h1>Gửi Bình Minh,</h1>
+        <p class="letter-content">
+            6 tháng qua, mỗi giây phút bên anh đều là một khung hình rực rỡ nhất trong cuốn phim của em...
+        </p>
+        
+        <div id="timer" class="bump-timer"></div>
+    </div>
+</section>
 
    <section class="page" id="timeline">
         <h2 class="title">HÀNH TRÌNH ĐÃ QUA</h2>
