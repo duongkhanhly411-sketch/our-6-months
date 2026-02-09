@@ -353,3 +353,64 @@ h1, .letter-title, .section-title {
     from { background-position: 0 0; }
     to { background-position: 1000px 2000px; }
 }
+/* Container cho các phần tử bay lên (ảnh và chữ) */
+.floating-elements-container {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    pointer-events: none; /* Không chặn tương tác chuột */
+}
+
+/* Hiệu ứng ảnh bong bóng bay lên */
+.floating-bubble {
+    position: absolute;
+    width: 150px; /* Kích thước ảnh bong bóng */
+    height: 150px;
+    border-radius: 50%; /* Bo tròn thành hình bong bóng */
+    object-fit: cover;
+    opacity: 0;
+    animation: bubbleRise 20s infinite ease-in-out;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.bubble-1 { animation-delay: 2s; top: 80%; left: 10%; }
+.bubble-2 { animation-delay: 8s; top: 70%; right: 20%; width: 120px; height: 120px; }
+.bubble-3 { animation-delay: 14s; top: 90%; left: 40%; width: 180px; height: 180px; }
+/* Ly có thể thêm .bubble-4, .bubble-5 với animation-delay khác nhau */
+
+@keyframes bubbleRise {
+    0% { opacity: 0; transform: translateY(0px) scale(0.5); }
+    10% { opacity: 0.8; transform: translateY(-50px) scale(0.8); }
+    50% { opacity: 0.8; transform: translateY(-300px) scale(1.1); }
+    90% { opacity: 0; transform: translateY(-600px) scale(1.2); }
+    100% { opacity: 0; transform: translateY(0px) scale(0.5); }
+}
+
+/* Điều chỉnh lại hiệu ứng chữ để không bị trùng với ảnh */
+.floating-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    animation: fadeInOutFloat 20s infinite; /* Tăng thời gian animation */
+    position: absolute;
+    white-space: nowrap;
+}
+
+.text-1 { animation-delay: 0s; top: 10%; left: 10%; }
+.text-2 { animation-delay: 5s; top: 30%; right: 15%; }
+.text-3 { animation-delay: 10s; bottom: 20%; left: 20%; }
+.text-4 { animation-delay: 15s; top: 50%; right: 10%; }
+
+@keyframes fadeInOutFloat {
+    0% { opacity: 0; transform: translateY(50px) scale(0.8); }
+    5% { opacity: 1; transform: translateY(0) scale(1); }
+    25% { opacity: 1; transform: translateY(-10px) scale(1.05); }
+    30% { opacity: 0; transform: translateY(-50px) scale(0.9); }
+    100% { opacity: 0; }
+}
