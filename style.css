@@ -257,37 +257,42 @@ h1, .letter-title, .section-title {
     transform: scale(1.1);
     filter: sepia(0); /* Hiện màu thật khi xem kĩ */
 }
-/* Container cho phép cuộn ngang */
+/* 1. Container cho phép cuộn ngang tràn màn hình */
 .film-strip-container {
-    width: 100%;
-    overflow-x: auto;
-    padding: 50px 0;
-    scrollbar-width: none; /* Ẩn thanh cuộn */
+    width: 100vw; /* Lấy toàn bộ chiều rộng màn hình điện thoại */
+    margin-left: calc(-50vw + 50%); /* Đẩy tràn lề ra sát mép */
+    overflow-x: auto; /* Kích hoạt vuộn ngang */
+    padding: 30px 0;
+    scrollbar-width: none; 
+    -webkit-overflow-scrolling: touch; /* Giúp vuốt trên iPhone mượt như app */
 }
 
 .film-strip-container::-webkit-scrollbar {
     display: none;
 }
 
-/* Dải phim dàn hàng ngang */
+/* 2. Dải phim dàn hàng ngang, tuyệt đối không nhảy dòng */
 .film-strip {
-    display: flex;
-    gap: 30px;
-    padding: 0 100px;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important; /* Giữ các ảnh luôn nằm trên một hàng */
+    gap: 20px;
+    padding: 0 40px; /* Tạo khoảng trống ở đầu và cuối dải phim */
     width: max-content;
 }
 
-/* Tạo hình dáng khung phim nhựa */
+/* 3. Khung hình phim nhựa */
 .film-item {
-    width: 320px;
-    flex-shrink: 0;
+    width: 280px !important; /* Độ rộng vừa phải cho màn hình điện thoại */
+    flex-shrink: 0 !important; /* Ngăn trình duyệt bóp nghẹt kích thước ảnh */
     background: #111;
-    padding: 15px 10px;
-    /* Tạo lỗ răng cưa phim */
-    border-top: 12px dashed rgba(255,255,255,0.2);
-    border-bottom: 12px dashed rgba(255,255,255,0.2);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+    padding: 12px 8px;
+    border-top: 10px dashed rgba(255, 255, 255, 0.2);
+    border-bottom: 10px dashed rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
+
+
 
 .film-frame {
     background: #fff;
