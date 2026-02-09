@@ -258,42 +258,39 @@ h1, .letter-title, .section-title {
     filter: sepia(0); /* Hiện màu thật khi xem kĩ */
 }
 /* 1. Container cho phép cuộn ngang tràn màn hình */
+/* 1. Container cho phép tràn toàn màn hình điện thoại */
 .film-strip-container {
-    width: 100vw; /* Lấy toàn bộ chiều rộng màn hình điện thoại */
-    margin-left: calc(-50vw + 50%); /* Đẩy tràn lề ra sát mép */
-    overflow-x: auto; /* Kích hoạt vuộn ngang */
+    width: 100vw; /* Lấy hết chiều rộng màn hình */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow-x: auto; /* Quan trọng: Cho phép lướt ngang */
     padding: 30px 0;
     scrollbar-width: none; 
-    -webkit-overflow-scrolling: touch; /* Giúp vuốt trên iPhone mượt như app */
+    -webkit-overflow-scrolling: touch; /* Giúp vuốt trên iPhone mượt hơn */
 }
 
-.film-strip-container::-webkit-scrollbar {
-    display: none;
-}
-
-/* 2. Dải phim dàn hàng ngang, tuyệt đối không nhảy dòng */
+/* 2. Dải phim dàn hàng ngang, tuyệt đối KHÔNG được co nhỏ */
 .film-strip {
     display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important; /* Giữ các ảnh luôn nằm trên một hàng */
-    gap: 20px;
-    padding: 0 40px; /* Tạo khoảng trống ở đầu và cuối dải phim */
-    width: max-content;
+    flex-wrap: nowrap !important; /* Bắt các ảnh phải nằm trên 1 hàng ngang */
+    gap: 20px; /* Khoảng cách giữa các ảnh */
+    padding: 0 50px;
+    width: max-content; /* Để dải phim tự kéo dài theo số lượng ảnh */
 }
 
-/* 3. Khung hình phim nhựa */
+/* 3. Khung hình phim nhựa cố định kích thước */
 .film-item {
-    width: 280px !important; /* Độ rộng vừa phải cho màn hình điện thoại */
-    flex-shrink: 0 !important; /* Ngăn trình duyệt bóp nghẹt kích thước ảnh */
+    width: 300px !important; /* Độ rộng cố định, không cho phép bị bóp hẹp */
+    flex-shrink: 0 !important; /* Ép trình duyệt không được co nhỏ ảnh */
     background: #111;
-    padding: 12px 8px;
-    border-top: 10px dashed rgba(255, 255, 255, 0.2);
-    border-bottom: 10px dashed rgba(255, 255, 255, 0.2);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    padding: 15px 10px;
+    border-top: 12px dashed rgba(255, 255, 255, 0.2);
+    border-bottom: 12px dashed rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.8);
 }
-
-
-
 .film-frame {
     background: #fff;
     padding: 5px;
