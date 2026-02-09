@@ -235,8 +235,8 @@ h1, .letter-title, .section-title {
 }
 /* Ép ảnh vừa khít khung PHOTO 01 */
 .img-placeholder {
-    width: 100%;
-    height: 200px; /* Độ cao cố định cho khung phim */
+    width: 70%;
+    height: 100px; /* Độ cao cố định cho khung phim */
     overflow: hidden; /* Cắt bỏ phần thừa của ảnh */
     display: flex;
     align-items: center;
