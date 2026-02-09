@@ -293,3 +293,63 @@ h1, .letter-title, .section-title {
     background: #fff;
     padding: 5px;
 }
+/* Trang chứa những kỷ niệm phụ */
+#extra-moments {
+    background: linear-gradient(to bottom, #2c241e, #000); /* Nền chuyển màu ấm áp */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+/* Các đoạn chữ bay lơ lửng */
+.floating-text-container {
+    position: relative;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.floating-text {
+    font-family: 'Playfair Display', serif; /* Dùng font Ly đang có */
+    font-size: 2.2rem;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    opacity: 0; /* Ban đầu ẩn */
+    animation: fadeInOutFloat 15s infinite; /* Hiệu ứng bay vào, bay ra */
+    position: absolute;
+    white-space: nowrap;
+}
+
+.text-1 { animation-delay: 0s; top: 10%; left: 10%; }
+.text-2 { animation-delay: 3s; top: 30%; right: 15%; }
+.text-3 { animation-delay: 6s; bottom: 20%; left: 20%; }
+.text-4 { animation-delay: 9s; top: 50%; right: 10%; }
+
+@keyframes fadeInOutFloat {
+    0% { opacity: 0; transform: translateY(50px) scale(0.8); }
+    10% { opacity: 1; transform: translateY(0) scale(1); }
+    30% { opacity: 1; transform: translateY(-10px) scale(1.05); }
+    40% { opacity: 0; transform: translateY(-50px) scale(0.9); }
+    100% { opacity: 0; transform: translateY(50px) scale(0.8); }
+}
+
+/* Thêm hiệu ứng sao lấp lánh (nếu muốn) */
+.background-stars {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+    opacity: 0.1;
+    animation: star-move 60s linear infinite;
+}
+
+@keyframes star-move {
+    from { background-position: 0 0; }
+    to { background-position: 1000px 2000px; }
+}
