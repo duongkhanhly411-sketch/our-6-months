@@ -66,40 +66,42 @@ body {
     box-shadow: 15px 15px 0px #1a1512;
     transform: rotate(-1deg);
 }
+/* Con thuyền bạc to và sang trọng */
+.silver-boat {
+    font-size: 120px; /* Làm thuyền to hẳn lên */
+    filter: drop-shadow(0 0 15px rgba(255,255,255,0.5)) grayscale(100%) brightness(1.5);
+    cursor: pointer;
+    display: inline-block;
+    animation: boat-float 4s ease-in-out infinite;
+    transition: all 0.4s ease;
+}
+
+@keyframes boat-float {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+/* Hiệu ứng "Bump" bùng nổ cho đồng hồ */
+.bump-timer {
+    display: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #2c241e;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid #2c241e;
+    animation: bump-in 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes bump-in {
+    0% { transform: scale(0); opacity: 0; }
+    70% { transform: scale(1.2); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
 #gift-container {
     text-align: center;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-.boat-gift {
-    font-size: 60px;
-    display: inline-block;
-    animation: boat-sway 3.5s ease-in-out infinite;
-}
-
-@keyframes boat-sway {
-    0%, 100% { transform: translateY(0) rotate(-8deg); }
-    50% { transform: translateY(-12px) rotate(8deg); }
-}
-
-#click-hint {
-    font-family: 'Dancing Script', cursive; /* Font viết tay cho romantic */
-    font-size: 1.2rem;
-    color: #4a3728;
-    margin-top: 10px;
-    animation: pulse-text 2s infinite;
-}
-
-@keyframes pulse-text {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-}
-
-/* Hiện đồng hồ lung linh sau khi nhấn thuyền */
-#timer.active {
-    display: block !important;
-    animation: emerge 1.5s ease-out;
+    margin-bottom: 30px;
 }
 #timer {
     margin-top: 30px;
