@@ -246,3 +246,58 @@ body {
 }
 
 @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+/* Trang cuối: Bức thư 6 tháng với hiệu ứng đánh máy */
+.typing-page {
+    background-color: #1a1512; /* Nền tối hơn, tĩnh lặng hơn */
+    color: var(--primary-gold);
+    text-align: left;
+    padding: 80px 40px;
+    justify-content: flex-start; /* Đẩy nội dung lên trên một chút */
+    align-items: center;
+}
+
+.typing-page .letter-container {
+    max-width: 700px;
+    width: 100%;
+    margin-top: 50px;
+    padding: 40px;
+    background: rgba(220, 200, 160, 0.05); /* Lớp nền trong suốt */
+    border-left: 5px solid var(--primary-gold);
+    box-shadow: 0 0 30px rgba(220, 200, 160, 0.2);
+    border-radius: 5px;
+}
+
+.typing-page .letter-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--primary-gold);
+}
+
+.typed-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    min-height: 300px; /* Đảm bảo đủ không gian cho thư */
+    white-space: pre-wrap; /* Giữ nguyên xuống dòng và khoảng trắng */
+    overflow: hidden; /* Ẩn phần văn bản chưa được đánh máy */
+    border-right: 2px solid rgba(220, 200, 160, 0.7); /* Con trỏ đánh máy */
+    animation: typing-cursor 0.7s infinite;
+    display: inline-block; /* Quan trọng để con trỏ hiển thị đúng */
+}
+
+.signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    margin-top: 40px;
+    text-align: right;
+    color: var(--primary-gold);
+}
+
+/* Hiệu ứng con trỏ đánh máy nhấp nháy */
+@keyframes typing-cursor {
+    from { border-right-color: rgba(220, 200, 160, 0.7); }
+    50% { border-right-color: transparent; }
+    to { border-right-color: rgba(220, 200, 160, 0.7); }
+}
