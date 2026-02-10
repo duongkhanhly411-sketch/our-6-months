@@ -74,3 +74,48 @@ document.addEventListener('click', function() {
         handleMusic();
     }
 }, { once: true });
+document.addEventListener('DOMContentLoaded', () => {
+    // ... (Giữ nguyên các hàm hiện có của Ly) ...
+
+    const sixMonthsLetterSection = document.getElementById('six-months-letter');
+    const typedTextElement = document.getElementById('typed-text');
+    const letterContent = `Thế là mình đã đi cùng nhau được 6 tháng rồi anh nhỉ?
+Cảm ơn anh vì nửa năm qua đã luôn ở bên, chiều chuộng và kiên nhẫn với những suy nghĩ vu vơ của em. Em không hứa những ngày sau này lúc nào cũng toàn màu hồng, nhưng em hứa sẽ luôn cùng anh chia sẻ, cùng anh trưởng thành và trân trọng từng phút giây mình có nhau.
+Chúc mừng kỉ niệm 6 tháng của chúng mình. Mong là nhiều cái 6 tháng nữa, em vẫn được là người ở bên cạnh anh.`; // Thêm cả đoạn "Yêu anh rất nhiều!" vào đây nếu muốn nó đánh máy cùng
+
+    let charIndex = 0;
+    let typingInterval;
+
+    function typeLetter() {
+        if (charIndex < letterContent.length) {
+            typedTextElement.textContent += letterContent.charAt(charIndex);
+            charIndex++;
+            typedTextElement.style.borderRightColor = 'rgba(220, 200, 160, 0.7)'; // Giữ con trỏ khi đang gõ
+        } else {
+            clearInterval(typingInterval);
+            typedTextElement.style.borderRightColor = 'transparent'; // Ẩn con trỏ khi gõ xong
+        }
+    }
+
+    // Hàm kiểm tra khi người dùng cuộn đến trang thư
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && entry.target.id === 'six-months-letter') {
+                if (!typingInterval) { // Chỉ chạy một lần
+                    typedTextElement.textContent = ''; // Xóa nếu đã có text cũ
+                    charIndex = 0;
+                    typingInterval = setInterval(typeLetter, 50); // Tốc độ đánh máy (50ms/chữ)
+                }
+            } else {
+                // Tùy chọn: Reset lại hoặc làm gì đó khi rời khỏi trang
+                // clearInterval(typingInterval);
+                // typedTextElement.textContent = '';
+                // typingInterval = null;
+            }
+        });
+    }, { threshold: 0.5 }); // Khi 50% trang hiển thị trên màn hình
+
+    if (sixMonthsLetterSection) {
+        observer.observe(sixMonthsLetterSection);
+    }
+});
